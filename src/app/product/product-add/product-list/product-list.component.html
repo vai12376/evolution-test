@@ -1,1 +1,24 @@
-<p>product-list works!</p>
+<!-- @format -->
+
+<p style="font-size: 30px">product-list</p>
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Quantity</th>
+        <th>Rate</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productList; index as i">
+            <td>{{ product.name }}</td>
+            <td>{{ product.color }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>{{ product.rate }}</td>
+            <td>{{ product.description }}</td>
+            <button (click)="purchaseAll(i)">Purchase All</button>
+            <button (click)="singlePurchase(i)">Single Purchase</button>
+            <button (click)="purchaseLot(i)">Purchase Lot</button>
+        </tr>
+    </tbody>
+</table>
